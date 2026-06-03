@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batman Intro</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+}
+
+/* Glowing background effects  */
+body::before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(255,215,0,.3),
+        transparent 70%
+    );
+    animation:pulse 2s infinite;
+}
+
+/* Batman container one  */
+.batman{
+    position:relative;
+    width:300px;
+    z-index:1;
+    animation:float 3s ease-in-out infinite;
+}
+
+/* SVG = responsible for the Batman shape */
+.batman svg{
+    width:100%;
+    height:auto;
+
+    filter:
+        drop-shadow(0 0 10px #FFD700)
+        drop-shadow(0 0 25px #FFD700)
+        drop-shadow(0 0 50px #FFD700);
+}
+
+/* Floating effect */
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* Glow pulse animation da  */
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="batman">
+    <svg viewBox="0 0 512 512">
+        <path fill="#FFD700"
+        d="M32 320
+        L96 224
+        L128 256
+        L160 96
+        L224 192
+        L256 64
+        L288 192
+        L352 96
+        L384 256
+        L416 224
+        L480 320
+        L384 352
+        L320 320
+        L256 384
+        L192 320
+        L128 352
+        Z"/>
+    </svg>
+</div>
+
+<script>
+setTimeout(() => {
+    window.location.href = "https://munwaar.github.io/Portfolio/";
+}, 1000);
+</script>
+
+</body>
+</html>
